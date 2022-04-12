@@ -1,0 +1,216 @@
+.pay_list
+  display: flex
+  flex-direction: column
+  align-items: center
+  position: relative
+.pay_item
+  width: 268px
+  margin-bottom: 30px
+  position: relative
+  .pay_item_title
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 40px;
+    background: #3B68F0;
+    padding: 0 20px
+    box-sizing: border-box
+    font-size: 14px;
+    font-weight: 500;
+    color: #FFFFFF;
+    border-radius: 3px 3px 0 0
+    .pay_item_text
+      width: 120px
+      overflow: hidden
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      word-break: break-all;
+    .pay_item_status
+      width: 100px
+      display: flex
+      justify-content: flex-end
+      align-items: center
+      margin-left: 5px
+      .pay_item_status_text
+        width: 80px
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        word-break: break-all;
+        text-align: right
+      i
+        cursor pointer
+        margin-left: 10px
+        position: relative
+        top: 2px
+  .pay_item_content
+    padding: 20px
+    box-sizing: border-box
+    border: 1px solid #EAEBEE
+    border-top: none
+    .pay_item_info
+      margin-bottom: 10px
+      display: flex
+      justify-content: space-between
+    .pay_item_info_last
+      margin: 0
+  .pay_item_btns
+    height: 40px
+    display: flex
+    border: 1px solid #EAEBEE
+    border-top: none
+    cursor pointer
+    border-radius 0 0 3px 3px
+    color: #3B68F0
+    .pay_btn
+      flex: 1
+      text-align: center
+      line-height: 40px
+      background: #F8F9FA
+    .pay_btn:nth-of-type(1)
+      border-right: 1px solid #EAEBEE
+  .pay_ajust_plain
+    width: 228px;
+    height: 32px;
+    border-radius: 4px;
+    border: 1px solid #3B68F0;
+    line-height: 32px
+    text-align: center
+    font-size: 12px;
+    font-weight: 400;
+    color: #3B68F0;
+    margin-top: 10px
+    cursor pointer
+    &.pay_ajust_plain-none
+      cursor: not-allowed
+      border-color: #CDD0D4
+      color: #CDD0D4
+  .pay_ajust_record
+    font-size: 12px;
+    font-weight: 400;
+    color: #CDD0D4;
+    text-align: center
+    cursor pointer
+    padding-top 10px
+    &:hover
+      color: #3B68F0
+  .pay_circle_box
+    position: absolute
+    left: -50px
+    top 50%
+    height: 100%
+    .pay_line
+      position: absolute
+      // height: 196px
+      height: calc(100% + 29px)
+      width: 0
+      border-left: 1px dashed rgba(59, 104, 240, 1)
+      top 21px
+      left: 50%
+    .pay_line_last
+      height: calc(50% + 20px)
+  .pay_operate_box
+    position: absolute
+    right: -298px
+    display: flex
+    align-items: center
+    justify-content: center
+    .pay_arrow
+      border: 8px solid transparent;
+      border-left: 8px solid rgba(59, 104, 240, 1);
+      width: 0;
+      height: 0px;
+      margin-bottom: 15px
+      position: relative
+      top: 7px
+    .pay_operate
+      width: 268px
+      border: 1px solid #EAEBEE;
+      padding: 20px
+      box-sizing: border-box
+      .pay_operate_title
+        font-size: 12px;
+        font-weight: 500;
+        color: #494949;
+        margin-bottom: 10px
+      .pay_operate_info
+        display: flex
+        justify-content: space-between
+        font-size: 12px;
+        color: #494949;
+        .pay_operate_info_label
+          font-weight: 400
+        .pay_operate_info_value
+          font-weight: 500
+        .pay_operate_info_progress
+          position relative
+          left 24px
+          width: 130px
+          /deep/.el-progress
+            .el-progress__text
+              font-size: 12px !important
+              margin-left: 10px
+        .pay_operate_info_progress-1
+          /deep/.el-progress
+            .el-progress__text
+              color: #3B68F0
+        .pay_operate_info_progress-2
+          /deep/.el-progress
+            .el-progress__text
+              color: #88CCAB
+        .pay_operate_info_progress-3
+          /deep/.el-progress
+            .el-progress__text
+              color: #FEBB27
+  .pay_add_receive
+    width: 268px;
+    height: 40px;
+    background: #FFFFFF;
+    border-radius: 0 0 4px 4px;
+    border: 1px solid #EAEBEE;
+    box-sizing: border-box
+    border-top: none
+    color: #3B68F0
+    line-height: 40px
+    text-align: center
+    cursor pointer
+    &.pay_add_receive-disabled
+      cursor: not-allowed
+      color: #CDD0D4
+.pay_item_lastt
+  .pay_circle_box
+    .pay_line
+      display: none
+.pay_add_box
+  position relative
+  .pay_add
+    width: 268px;
+    height: 40px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    border: 1px solid #EAEBEE;
+    line-height: 40px
+    text-align: center
+    font-size: 12px;
+    font-weight: 500;
+    color: #3B68F0;
+    cursor pointer
+.pay_circle
+  width: 20px
+  height: 20px
+  background rgba(59, 104, 240, 1)
+  border-radius: 50%
+  display flex
+  align-items center
+  justify-content center
+  .pay_white
+    height 10px
+    width: 10px
+    background #fff
+    border-radius: 50%
+.pay_circle_single
+  position: absolute
+  left: -50px
+  top 10px
+

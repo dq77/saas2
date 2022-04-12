@@ -1,0 +1,63 @@
+.home-title
+  font-size 16px
+  color #494949
+  margin-bottom 20px
+  display flex
+  justify-content space-between
+.title-more-btn
+  font-size 12px
+  color #494949
+  padding 5px 10px
+  border-radius 4px
+  border 1px solid #EAEBEE
+  cursor pointer
+.p-roll-box
+  width 100%
+  border 1px solid #EAEBEE
+  position relative
+  margin-bottom 30px
+  .u-roll-content
+    display flex
+    align-items center
+    overflow auto
+    &::-webkit-scrollbar
+      // width 1px
+      height 6px
+    &::-webkit-scrollbar-thumb
+      background #ccc
+  .u-roll-mask-left
+    position absolute
+    left 0
+    top 0
+    height 100%
+    width 150px
+    background linear-gradient(to right, rgba(255,255,255, 0.9), rgba(255,255,255,0.1))
+  .u-roll-mask-right
+    position absolute
+    right 0
+    top 0
+    height 100%
+    width 150px
+    background linear-gradient(to left, rgba(255,255,255, 0.9), rgba(255,255,255,0.1))
+.actual-controller-main
+  margin-bottom 45px
+  .actual-controller-title
+    line-height 20px
+    background #F5FAFF
+    display flex
+    justify-content space-between
+    padding 20px
+    border 1px solid #EAEBEE
+    border-bottom none
+    font-size 16px
+    .actual-controller-name
+      color #C79F5F
+    .title-right
+      font-size 12px
+      color #6D7278
+      i
+        font-size 16px
+        margin-right 3px
+.module-main
+  margin-bottom 45px
+

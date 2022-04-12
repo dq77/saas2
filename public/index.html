@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="//cdn.qjdchina.com/static-online/saas/qjd.svg">
+    <title>仟金顶</title>
+  </head>
+  <body>
+    <noscript>
+    </noscript>
+    <div id="app"></div>
+    <script src="https://qjdstatic.oss-cn-hangzhou.aliyuncs.com/js/brandTime.js"></script>
+    <script src="https://g.alicdn.com/dingding/dinglogin/0.0.5/ddLogin.js"></script>
+    <!-- built files will be auto injected -->
+    <script src="//cdn.qjdchina.com/static-online/saas/plugins/vue@2.6.11/vue.js"></script>
+    <script src="//cdn.qjdchina.com/static-online/saas/plugins/vue-router@3.2.0/vue-router.min.js"></script>
+    <script src="//cdn.qjdchina.com/static-online/saas/plugins/vuex@3.4.0/vuex.min.js"></script>
+    <script src="//cdn.qjdchina.com/static-online/saas/plugins/element-ui@2.15.7/index.min.js"></script>
+    <script src="//cdn.qjdchina.com/static-online/saas/plugins/axios@0.21.1/axios.min.js"></script>
+    <!-- <script src="//cdn.qjdchina.com/static-online/saas/plugins/echarts@5.0.2/echarts.min.js"></script> -->
+    <script src="//cdn.qjdchina.com/static-online/saas/plugins/moment@2.29.1/moment.min.js"></script>
+    <script src="//at.alicdn.com/t/font_2228016_x18ib52duc.js"></script>
+    <% if (process.env.VUE_APP_WEBLOGS_HOST) { %>
+      <script src="https://<%= process.env.VUE_APP_WEBLOGS_HOST %>/public/common/js/collector.min.js"></script>
+      <script src='https://<%= process.env.VUE_APP_WEBLOGS_HOST %>/public/rule/rule.<%= process.env.VUE_APP_HOST %>.js'></script>
+    <% } %>
+  </body>
+</html>

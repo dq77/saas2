@@ -1,0 +1,73 @@
+.config_box
+  position: relative
+  width 100%
+  background #FFFFFF
+  border-radius 4px
+  border 1px solid #EAEBEE
+  box-sizing border-box
+  padding 20px
+  margin-bottom 20px
+  .config_title
+    height 20px
+    font-size 14px
+    font-weight 500
+    color #494949
+    line-height 20px
+    margin-bottom: 15px
+  .guide-list
+    padding 10px 100px 10px
+    display flex
+    .guide-item
+      text-align center
+      width 52px
+      .already-img
+        width 40px
+        height 40px
+        margin 0 auto
+        img
+          width 40px
+      .num
+        width 40px
+        height 40px
+        border 2px solid #547BF1
+        margin 0 auto
+        border-radius 20px
+        font-size 20px
+        color #547BF1
+        line-height 38px
+      .guide-title
+        margin 10px 0
+        width 100px
+        margin-left -25px
+      .already-state
+        color #CBCBCD
+      .notready-state
+        color #547BF1
+        cursor pointer
+    .between
+      flex 1 0 auto
+      height 3px
+      background-color #E8ECF7
+      margin-top 18px
+      .icon-area
+        width 14px
+        background-color #fff
+        height 14px
+        margin -2px auto
+        .mid-icon
+          width 0
+          height 0
+          border-left 4px solid #E8ECF7
+          border-top 4px solid transparent
+          border-bottom 4px solid transparent
+          margin 0 auto
+      .already-img, .num, .guide-title, .already-state, .notready-state
+        display none
+  .skip_guide
+    position absolute
+    top: 20px
+    right: 20px
+    font-size: 12px;
+    font-weight: 500;
+    color: #3B68F0;
+    cursor pointer

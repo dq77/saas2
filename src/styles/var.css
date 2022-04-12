@@ -1,0 +1,9 @@
+:root {
+  --defaultColor: #3b68f0;
+  --successColor: #f56c6c;
+  --fontColor: #494949;
+  --defaultSize: 14px;
+  --smallSize: 12px;
+  --smallSpace: 10px;
+  --defaultStadius: 4px;
+}

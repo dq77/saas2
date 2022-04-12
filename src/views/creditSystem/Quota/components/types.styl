@@ -1,0 +1,77 @@
+.types_box
+  padding-top 50px
+  min-height 250px
+  .types_content
+    display flex
+    // justify-content space-between
+    .types_item
+      position relative
+      flex 0 0 210px
+      height 250px
+      background #FFFFFF
+      box-shadow 0px 8px 16px 0px rgba(0, 0, 0, 0.05)
+      border 1px solid #EAEBEE
+      box-sizing border-box
+      margin 0 10px
+      box-sizing border-box
+      padding 20px
+      color #494949
+      .types_title
+        position absolute
+        display flex
+        font-size 12px
+        font-weight 500
+        color #494949
+        line-height 17px
+        top -30px
+        left 0
+      &.types_item_current
+        background rgba(59, 104, 240, 1)
+        color #fff
+        .custom_icon
+          color #fff
+        .types_item_btn
+          background #fff
+          color rgba(60, 93, 164, 1)
+      .types_item_title
+        height 20px
+        font-size 14px
+        font-weight 500
+        line-height 20px
+        margin-bottom 18px
+      .types_item_content
+        height 85px
+        font-size 12px
+        font-weight 400
+        line-height 17px
+        margin-bottom 50px
+      .types_item_btn
+        width 172px
+        height 37px
+        background rgba(59, 104, 240, 1)
+        text-align center
+        line-height 37px
+        font-size 14px
+        font-weight 500
+        color #FFFFFF
+        cursor pointer
+    .types_item:nth-of-type(1)
+      margin-left 0
+    .types_item:last-child
+      margin-right 0
+.custom_icon
+  position absolute
+  top -1px
+  right 20px
+  font-size 21px
+  color #E6A23C
+.types_empty
+  display flex
+  align-items center
+  justify-content center
+  padding 100px
+  color: #ccc
+.types_btn_box
+  display: flex
+  justify-content: center
+  padding: 30px 

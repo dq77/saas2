@@ -1,0 +1,543 @@
+color-danger = #f66
+color-danger-hover = #f78989
+
+*
+  box-sizing border-box
+html,body
+  margin 0
+  padding 0
+  width 100%
+  height 100%
+  overflow hidden
+  font-family 'Avenir', Helvetica, Arial, sans-serif
+  font-size 12px
+input,textarea
+  font-family 'Avenir', Helvetica, Arial, sans-serif
+a
+  color #3b68f0
+  text-decoration none
+table
+  border-collapse collapse
+ul
+  padding 0
+  margin 0
+  list-style-type none
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+  -webkit-appearance: none !important
+.el-input__inner
+  &::placeholder
+    color #CDD0D4
+.page-main
+  flex: 1
+  padding 0 30px 20px
+  width 100%
+  min-width 1000px
+// 块上方的标题
+.page-title
+  // padding-left 24px
+  line-height 26px
+  font-size 18px
+  color #383b42
+  font-weight bold
+  // background url('./assets/page-title.png') left center no-repeat
+  // background-size 18px
+// .page-title-noicon
+//   line-height 26px
+//   font-size 18px
+//   color #383b42
+// 块
+.page-block
+  border-radius 8px
+  background #fff
+
+// 深蓝底，白字的按钮，主按钮
+.page-button-deep-blue
+  color #fff
+  background #121A57
+  &:hover
+    color #fff
+    background #121A57
+    opacity .7
+// 蓝底，白字的按钮，主按钮2
+.page-button-blue
+  color #fff
+  background #3C5DA4
+  &:hover
+    color #fff
+    background #3C5DA4
+    opacity .7
+// 浅蓝底，蓝字的按钮，主按钮3
+.page-button-light-blue
+  color #3C5DA4
+  background #E8ECF7
+  border-color #E8ECF7
+  &:hover
+    color #3C5DA4
+    background #E8ECF7
+    border-color #E8ECF7
+    opacity .7
+// 白底，灰字，灰框的按钮，次按钮
+.page-button-white
+  color #738A9E
+  background #fff
+// 灰底，白字的按钮，次按钮
+.page-button-gray
+  color #888B91
+  background #3C5DA4
+// 白底，蓝字，灰框的按钮
+.page-button-white
+  color #4a71f0
+  background #fff
+  border 1px solid #e0e7f4
+  &:hover
+    border 1px solid #e0e7f4
+// 主布局，边界圆弧形态
+.page-layout-main
+  padding 20px
+  background #fff
+  min-height 400px
+// 上中下三段布局
+.page-layout-three-section
+  display flex
+  flex-direction column
+.page-layout-three-section-1
+  margin-bottom 20px
+  .el-button + .el-button
+    margin-left 10px
+.page-layout-three-section-2
+  flex 1
+  padding 20px
+  background #fff
+.page-layout-three-section-3
+  margin-top 20px
+  margin-bottom 20px
+  text-align center
+  .el-button + .el-button
+    margin-left 30px
+// 详情左右布局
+.page-collapse
+  padding 0 20px
+  background #ffff
+.page-detail
+  display flex
+  align-items: flex-start;
+  // border-top 1px solid #EBEEF5
+  // padding 20px 0 0 0
+  .page-detail-left
+    flex 1
+    padding 0 20px 0 0
+  .page-detail-right
+    flex 1
+    padding 0 20px
+    border-left 1px dashed #DCDFE6
+  .page-detail-item
+    font-size 12px
+    color #738A9E
+    span
+      color #494949
+
+// page section样式
+.page-section
+  margin-top 8px
+  .page-section-title
+    font-size 16px
+    font-weight 400
+    color #494949
+    line-height 22px
+    padding-bottom 9px
+    margin-bottom 30px
+    border-bottom 1px solid #DEE8F6
+  &+.page-section
+    padding-top 20px
+
+// .p-flex
+//   display flex
+//   margin-bottom 20px
+//   .u-module-main
+//     background #fff
+//     border-radius 10px
+//     padding 20px
+//     width 100%
+//     overflow hidden
+//     position relative
+.summary-header
+  display flex
+  justify-content flex-start
+  .summary-logo
+    font-size 40px
+  .summary-title
+    display flex
+    margin-bottom 8px
+    align-items center
+  .summary-detail
+    margin-left 14px
+  .summary-icon
+    font-size 40px
+  .second-line
+    .summary-icon
+      background #53E0AF
+  .summary-name
+    font-size 12px
+    color #7A869E
+  .summary-amount
+    font-size 22px
+    font-weight bold
+    color #383B42
+  .summary-item
+    width 20%
+    margin-right 0.5%
+    padding 5px 0 5px 1%
+    border-right 1px solid #ECEEEF
+  .summary-item:last-child
+    margin-right 0
+    border none
+  .summary-item:first-child
+    padding-left 0
+.table
+  width 100%
+  font-size 12px
+  th,td
+    padding 8px 10px
+    line-height 23px
+    border 1px solid #ebeef5
+  th
+    background #f8fbfd
+    text-align left
+    color #909399
+    font-weight 700
+  td
+    white-space normal
+    word-break break-all
+    color #606266
+  &.table-layout-main
+    font-size 12px
+    line-height 23px
+    th
+      width 16%
+    td
+      width 34%
+
+.table-header
+  min-height 48px
+  color #606266
+  background #ebeef5
+  font-size 12px
+.flex
+  display flex
+[flex="1"]
+  flex 1
+  width 0
+
+.float-l
+  float left
+.float-r
+  float right
+
+.of-h
+  overflow hidden
+.of-a
+  overflow auto
+.of-s
+  overflow scroll
+
+.display-b
+  display block
+.display-i
+  display inline
+.display-ib
+  display inline-block
+
+.font-12
+  font-size 12px
+
+.nowrap
+  white-space nowrap
+
+.text-link
+  color #3B68F0
+  cursor pointer
+.search-button
+  width 76px
+.table-search-con
+  float right
+  margin 30px 10px 0 0
+.table-search-con2
+  margin-top 0
+
+.color-danger
+  color color-danger
+
+// 文字左对齐
+.text-left
+  text-align left
+  &.el-input-number input
+    text-align left
+// 文字居中
+.text-center
+  text-align center
+// 文字右对齐
+.text-right
+  text-align right
+
+.width-100
+  width 100%
+  &.el-date-editor
+    width 100%
+    &.el-input
+      width 100%
+.icon
+  width 1em
+  height 1em
+  vertical-align -0.15em
+  fill currentColor
+  overflow hidden
+.icon-zhongxinfenpeikehujingli
+  color #FBB03B
+.icon-shimingrenzheng
+  color #1292e9
+.icon-luruziliao
+  color #6dc5b7
+.icon-xinxishouquandabiaohou
+  color #64c8d0
+.icon-lingshoudabiaohou
+  color #65c8d0
+.icon-erjifenxiaodabiaohou
+  color #838bc5
+.icon-tuopanyewudabiaohou
+  color #5c94d6
+.iconfenpeiyewuyuan
+  color #4a71f0
+.icon-xinxishouquandabiaoqian
+.icon-lingshoudabiaoqian,
+.icon-erjifenxiaodabiaoqian,
+.icon-baozhengjindaoweiqian,
+.icon-huiyuanfeizhifuqian,
+.icon-tuopanyewudabiaoqian
+  color #ccc
+.icon-info
+  color #FBB03B
+.icon-VIP-0
+  color #ccc
+.icon-VIP-1
+  color #FBB03B
+.icon-VIP-2
+  color #f68530
+.icon-VIP-3
+  color #f15a24
+
+// 设置按钮圆角，将被去除
+.btn-round
+  border-radius 100px
+
+// 对element-ui的一些覆盖
+
+.el-uploader-stype-1
+  .el-upload
+    width 100%
+    height 100%
+  .el-upload-dragger
+    width 238px
+    height 153px
+    border 1px dashed #b6d2f4
+    border-radius 10px
+.el-prompt-confirm-btn-style-1
+  border-radius 100px
+.el-prompt-confirm-btn-style-2
+  background color-danger
+  color #fff
+  border-radius 100px
+  border-color color-danger
+  &:hover,&:active,&:focus
+    background color-danger-hover
+    border-color color-danger-hover
+.el-prompt-cancel-btn-style-1
+  border-radius 100px
+.tab-col
+  .el-form-item__content
+    width 56%
+.checkbox-col
+  .el-form-item__content
+    width 80%
+.el-input-group .el-input-group__prepend
+  background-color #fff
+.el-cascader-menu__item
+  padding 8px 30px 8px 20px
+.el-cascader.is-disabled .el-cascader__label,
+.el-input.is-disabled .el-input__inner,
+.el-select .el-input.is-disabled .el-input__inner,
+.el-checkbox__input.is-disabled+span.el-checkbox__label
+  color #606266
+.el-collapse-item__content,
+.el-form-item__label,
+.el-checkbox__label,
+.el-radio__label
+  font-size 12px
+.el-collapse-item__header
+  font-size 14px
+.el-form-item__content
+  font-size 12px
+  color #66788E
+.el-step.is-simple .el-step__title
+  font-size 12px
+.el-table
+  th.gutter
+    display table-cell!important
+  colgroup.gutter
+    display table-cell!important
+  td.is-right
+    // padding-right 40px !important
+    .cell
+      overflow visible
+  .sort-caret
+    border 4.5px solid transparent
+  .sort-caret.ascending
+    top 6px
+  .sort-caret.descending
+    bottom 8px
+  .tip-cell // 右侧有tip图标的单元格
+    margin-right 23px
+  .sort-cell // 表头有排序图标的单元格
+    margin-right 23px
+.el-table .cell
+  white-space pre-line
+
+// 厂服改版V3.0表格通用样式 http://p4c.cn/0peqp
+// .el-table
+//   color #494949
+//   thead,thead.is-group
+//     tr,th
+//       background-color #728BC2
+//       color #FFF
+//       font-weight normal
+//       padding 12px 0
+//   .el-table__body tr.el-table__row:nth-child(2n) td
+//     background-color #E8ECF7
+//   .el-button--text
+//     color #25BECD
+//     height 28px
+//     padding 7px 15px
+
+.form-item-updown
+  .el-form-item__label
+    float none
+.loan-process-form
+  .el-input-group--append
+    input.el-input__inner:read-only
+      background #f5f7fa
+.contract-dialig
+  .el-dialog__body
+    padding-top 0
+    td
+      cursor pointer
+.p-upload
+  .el-upload-list__item
+    .el-icon-close-tip
+      display none !important
+.el-breadcrumb__item:last-child
+  .el-breadcrumb__inner
+    color #494949
+.el-breadcrumb__inner
+  color #494949
+.el-icon-info
+  color #FE8B32
+
+// 设置popper-class='el-tooltip-shadow',effect='light'后tooltip边框变为阴影
+.el-tooltip-shadow
+  border 0 !important
+  box-shadow #999 0 0 16px 0 !important
+  .popper__arrow
+    border-color transparent !important
+
+.p-dialog-form
+  .el-form-item__content
+    margin-left 0 !important
+.p-radio-main
+  .el-radio-button--small
+    .el-radio-button__inner
+      padding 5px 10px
+  .el-radio-button
+    margin-right 5px
+  .el-radio-button__inner
+    border none
+    border-radius 3px !important
+    background #E1EBF7
+    color #383B42
+
+.p-no-right-margin
+  margin-right -22px
+.l7-marker-container:focus,
+canvas:focus
+  outline none
+
+// 审批单布局
+// 标题
+.page-layout-approval-title
+  margin 30px 0
+  font-size 20px
+  color #353f51
+// 描述列表
+.page-layout-approval-desc-list
+  margin-bottom 8px
+  color #66788e
+  line-height 30px
+  li
+    position relative
+    padding-left 10px
+    display inline-block
+    margin-right 30px
+    &:before
+      content ""
+      position absolute
+      left 0
+      top 12px
+      margin-right 4px
+      width 4px
+      height 4px
+      border-radius 4px
+      background #4A71F0
+// 手风琴内容
+.page-layout-approval-content
+  padding 20px
+  background #fff
+.page-layout-approval-collapse-title
+  flex 1
+  .u-pass-text
+    font-size 12px
+    color #66788e
+  .iconfont
+    font-size 30px
+    vertical-align middle
+  .icon-shenpiren,.icon-shenpishijianrenwulishi,.icon-fujian
+    color #c8dbf4
+  .icon-shenpitongyi
+    color #63c6b3
+  .icon-shenpibutongyi
+    color #F10101
+  .icon-shenpitongyi,.icon-shenpibutongyi
+    margin-left 20px
+  .u-right
+    float right
+    margin-right 20px
+    height 48px
+    font-size 12px
+    color #66788e
+    line-height 48px
+    i
+      margin-left 20px
+.warn-btn
+  color red
+  border 1px solid red
+
+// 弹窗按钮居中
+// .el-message-box__btns
+//   text-align center
+
+// 子页面底部按钮：居中、上下间距、宽高
+.p-btn-footer
+  margin 30px 0
+  text-align center
+  .el-button
+    font-size 12px
+    line-height 16px
+    padding: 7px 25px

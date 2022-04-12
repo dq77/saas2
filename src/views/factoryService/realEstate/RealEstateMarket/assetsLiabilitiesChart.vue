@@ -1,0 +1,129 @@
+<template lang="pug">
+Chart(title='资产&负债TOP5' category='assetsLiabilities' :mode='mode' :formData='formData' @changeType='changeType' :loading='assetsLoading || liabilitiesLoading' :options='chartOptions'  :dataSource='dataSource')
+</template>
+
+<script>
+import Chart from './chart'
+import { formData, businessChartOptions, barOptions, chartFormart } from './config'
+import { reactive, toRefs, watch } from '@vue/composition-api'
+import { deepCopy } from '@/utils/qjd'
+import useTimeout from 'hooks/useTimeout'
+import useFollow from '../hooks/useFollow'
+import useCharts from 'hooks/useCharts'
+import useApis from './api'
+import { getCompanyList, getYearList, getBeginEndTime } from './utils'
+export default {
+  props: {
+    mode: {
+      type: String
+    },
+    refresh: {
+      type: Boolean,
+      default: false
+    }
+  },
+  components: { Chart },
+  setup(props, { emit }) {
+    const state = reactive({
+      formData: deepCopy(formData),
+      chartOptions: deepCopy(businessChartOptions),
+      dataSource: []
+    })
+
+    const { perTimeout } = useTimeout()
+
+    // 加载图表
+    const initCharts = (xData, yData) => {
+      if (xData.length && yData.length) {
+        perTimeout(() => {
+          setDataSource(yData)
+          setxData(xData)
+          setOption()
+          chartInit()
+        })
+      } else {
+        chartClear()
+      }
+    }
+
+    // 格式化图表数据
+    const formartChartData = (type, data) => {
+      state.dataSource = data.slice(0, 5)
+      const xData = []
+      const yData = []
+      state.dataSource.map((item, key) => {
+        xData.push(item.comName)
+        yData.push(item[chartFormart[type].yName])
+      })
+      initCharts(xData, yData)
+    }
+
+    const {
+      followCompanyList,
+      getFollowCompanyList
+    } = useFollow()
+
+    const {
+      getAssets,
+      getLiabilities,
+      assetsLoading,
+      liabilitiesLoading,
+    } = useApis({
+      formartChartData,
+    })
+
+    const changeType = async () => {
+      await getFollowCompanyList({cache: true})
+      const { assetsLiabilitiesTime: time, assetsLiabilities: type } = state.formData
+      if (props.mode === 'follow' && !followCompanyList.value.length) {
+        formartChartData(type, [])
+        return
+      }
+      switch (type) {
+        case 'assets':
+          getAssets({
+            companyList: getCompanyList(followCompanyList.value, props.mode),
+            ...getBeginEndTime(getYearList(time))
+          })
+          break
+        case 'liabilities':
+          getLiabilities({
+            companyList: getCompanyList(followCompanyList.value, props.mode),
+            ...getBeginEndTime(getYearList(time))
+          })
+          break
+      }
+    }
+
+    const {
+      chartInit,
+      setDataSource,
+      setxData,
+      setOption,
+      chartClear
+    } = useCharts({
+      option: barOptions,
+      id: 'assetsLiabilitiesCharts',
+      isInit: false
+    })
+
+    watch(
+      () => props.refresh,
+      (value) => {
+        changeType()
+      }
+    )
+
+    return {
+      changeType,
+      assetsLoading,
+      liabilitiesLoading,
+      ...toRefs(state)
+    }
+  }
+}
+</script>
+
+<style lang="stylus" scoped>
+
+</style>

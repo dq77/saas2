@@ -1,0 +1,103 @@
+<template lang="pug">
+.page-main
+  PromptInfo(title='系统可支持您针对不同的客户，不同的产品去配置客户专属价格信息。在此页面中，找到您要配置价格的客户，然后点击“编辑客户价格”进行配置。')
+  Card(noTitle style='margin-bottom: 10px;')
+    //- form
+    Form(
+      ref='formRef'
+      :formData='formState.formData',
+      :formConfig='formState.formConfig'
+    )
+      .global-search-btn
+        el-button.search-button(
+          type='primary'
+          @click='searchFormHandle'
+          :loading='tableState.loading'
+        ) 搜索
+        el-button.search-button(@click='resetFormHandle') 重置
+  Card(noTitle)
+    //- table
+    el-button(style='margin-bottom: 20px' type='primary' @click='toBatchImport') 批量导入
+    Table(
+      :dataSource='tableState.dataSource'
+      :columns='columns'
+      :loading='tableState.loading'
+      @sortChange="sortChange"
+    )
+      template(slot='operate' slot-scope='{row}')
+        //- 操作
+        el-button(type='text' @click='seeHandle(row)' weblogs-anchor="supplyChain-factory-price-cuntomer-detail") 查看
+        el-button(type='text' @click='editHandle(row)' weblogs-anchor="supplyChain-factory-price-cuntomer-edit") 编辑客户价格
+    Pagination(:pagination='tableState.pagination')
+</template>
+<script>
+import { reactive, ref, toRefs } from '@vue/composition-api'
+import Form from '@/components/qjd/form'
+import Table from '@/components/qjd/table'
+import Pagination from '@/components/qjd/pagination'
+import Card from '@/components/Card'
+import useForm from 'hooks/useForm'
+import useTable from 'hooks/useTable'
+import ajaxStore from '@/apis'
+import { columns, cFormConfig, cFormData } from './config'
+import { orderVals } from '@/consts'
+import { uppertoline } from '@/utils/qjd'
+import Router from '@/router'
+import PromptInfo from '../../Components/PromptInfo.vue'
+
+export default {
+  components: {
+    Form,
+    Table,
+    Pagination,
+    Card,
+    PromptInfo
+  },
+  setup(props, { root }) {
+    const formRef = ref()
+    const { factory: { getCustomerPriceList } } = ajaxStore
+    // form
+    const formState = useForm({
+      formRef,
+      formData: cFormData,
+      formConfig: cFormConfig
+    })
+    // table & page
+    const tableState = useTable({ request: getCustomerPriceList })
+
+    const seeHandle = (row) => root.$router.push({ name: 'customerPriceDetail', query: {customerId: row.id, customerName: row.customerName} })
+    const editHandle = (row) => root.$router.push({ name: 'customerPriceEdit', query: {customerId: row.id, customerName: row.customerName} })
+    // 查询
+    const searchFormHandle = () => formState.submitHandle(tableState.searchHandle)
+    // 重置
+    const resetFormHandle = () => {
+      formState.resetHandle()
+      tableState.resetHandle()
+    }
+    // 产品数量排序
+    // const sortChange = ({ prop, order }) => tableState.searchHandle({ ...tableState.searchInfo, sortField: order ? uppertoline(prop) : null, sortBy: orderVals[order] })
+    const sortChange = ({ prop, order }) => {
+      const key = `${orderVals[order]}s`
+      tableState.searchHandle({...tableState.searchInfo, [key]: [uppertoline(prop)]})
+    }
+    const toBatchImport = () => { Router.push({ name: 'customerPriceImport' }) }
+    // state
+    const state = reactive({
+      formState,
+      tableState,
+    })
+
+    return {
+      formRef,
+      columns,
+      ...toRefs(state),
+      searchFormHandle,
+      resetFormHandle,
+      seeHandle,
+      editHandle,
+      sortChange,
+      toBatchImport
+    }
+  },
+}
+</script>

@@ -1,0 +1,293 @@
+// 只放最基本的覆盖样式，不要有一点个性样式，这里只能出现element的class名
+
+// 主色 #3b68f0
+
+// 抽屉
+.el-drawer__wrapper span {
+  outline: none;
+}
+.el-drawer__wrapper .el-drawer__body {
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+
+.golbal_search_box
+  padding 20px 20px 4px 20px
+  background #fff
+  margin-bottom 10px
+
+.custom_modal_footer
+  position relative
+  left -30px
+  width calc(100% + 60px)
+  display flex
+  justify-content flex-end
+  height 42px
+  box-sizing border-box
+  border-top 1px solid #EAEBEE
+  box-sizing border-box
+  padding 20px 30px 0 0
+  margin-top 20px
+
+.custom_popper_css
+  max-width: 300px
+
+
+// .el-button--primary,.el-button--primary:focus
+//   &.is-plain
+//     background-color #fff
+//     &:hover
+//       background #ebf0fe
+//       border-color #b1c3f9
+// .el-button--default
+//   background #fff
+//   border-color #9AA6B8
+//   color #9AA6B8
+//   &:hover
+//     background #ECF2FF
+//     border-color #3C5DA4
+//     color #3C5DA4
+// .el-button--primary,.el-button--primary:focus
+//   background-color #3B68F0
+//   border-color #3B68F0
+//   color #FFF
+//   &.is-plain
+//     background-color #fff
+//     border-color #3C5DA4
+//     color #3C5DA4
+//     &:hover
+//       background-color #ECF2FF
+//       border-color #547DD6
+//       color #547DD6
+// .el-button--text
+//   color #3C5DA4
+//   &:hover
+//     color #547DD6
+// 添加全局search-button样式
+
+// 复选框
+// .el-checkbox__input.is-checked .el-checkbox__inner
+//   background-color #3B68F0
+//   border-color #3B68F0
+
+
+
+
+
+.global-input-number
+  .el-input__inner
+    line-height 1!important
+
+// tab,对tab基础用法去掉灰色底线
+.el-tabs__nav-wrap::after
+  display none
+
+
+
+// 表格表头排序按钮
+.el-table .caret-wrapper
+  height 23px
+  .sort-caret.ascending
+    top 0
+  .sort-caret.descending
+    bottom 2px
+
+// 斑马纹颜色
+// .el-table--striped .el-table__body tr.el-table__row--striped td
+//   background #E8ECF7
+
+// 分页
+.el-pagination.is-background .el-pager li:not(.disabled):hover
+  color #3C5DA4
+.el-pagination.is-background .el-pager li:not(.disabled).active
+  background #3C5DA4
+  color #fff
+
+// custom-form
+.global-search-btn
+  float right
+  padding-top 30px
+  margin-right 10px
+.global-search-btn-feed
+  float right
+  padding-bottom 20px
+  margin-right 10px
+
+.global-main
+  padding 0 30px
+.global-content
+  background: #fff
+
+// custom-collapse
+.collapse-box
+  width 100%
+  background #fff
+  box-sizing border-box
+  padding 20px
+
+// help
+.global-help-text
+  font-size 12px
+  font-family PingFangSC-Regular, PingFang SC
+  font-weight 400
+  color #494949
+  line-height 17px
+  margin-bottom 60px
+
+// markdown-帮助文档
+.markdown {
+  flex: 1;
+  font-size: 14px;
+  overflow: hidden;
+  padding: 0 20px;
+  h1 {
+    height: 33px;
+    font-size: 24px;
+    color: #494949;
+    line-height: 22px;
+  }
+  h2 {
+    height: 25px;
+    font-size: 18px;
+    color: #494949;
+    line-height: 33px;
+  }
+  h3 {
+    height: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #494949;
+    line-height: 20px;
+  }
+  h4 {
+    height: 20px;
+    font-size: 12px;
+    color: #494949;
+    line-height: 20px;
+    font-weight: 400;
+  }
+  h5{
+    height: 20px;
+    font-size: 12px;
+    color: #494949;
+    line-height: 20px;
+    font-weight: 400;
+  }
+  p {
+    font-size: 12px;
+    font-weight: 400;
+    color: #494949;
+    line-height: 17px;
+  }
+  .hljs {
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+    code {
+      font-family: Menlo,Monaco,Consolas,Courier,monospace;
+      .hljs-tag {
+        line-height: 20px;
+      }
+    }
+  }
+  img {
+    width: 1000px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: auto;
+    margin-bottom: 50px;
+    border-left: 1px solid #EAEBEE;
+    th {
+      border-top: 1px solid #EAEBEE;
+      border-bottom: 1px solid #EAEBEE;
+      border-right: 1px solid #EAEBEE;
+      padding: 10px 8px;
+      text-align: left;
+    }
+    td{
+      border-top: 1px solid #EAEBEE;
+      border-right: 1px solid #EAEBEE;
+      border-bottom: 1px solid #EAEBEE;
+      padding: 10px 8px;
+    }
+  }
+}
+// 日历
+.vc-day
+  span[tabindex='0']
+    background: rgba(59, 104, 240, 1)
+    color #fff
+  span[tabindex='0'] + .vc-day-layer
+      display none !important
+  .vc-highlights
+    span[tabindex='0']
+      background: rgba(59, 104, 240, 1)
+  .vc-highlights + span[tabindex='-1']
+      background: rgba(59, 104, 240, 1) !important
+      color: #fff !important
+.vc-day
+  .vc-day-content:focus
+    background: rgba(59, 104, 240, 1) !important
+    color: #fff Im !important
+  .vc-day-content:hover
+    background: rgba(59, 104, 240, 1) !important
+    color: #fff !important
+  .vc-day-content:active
+    background: rgba(59, 104, 240, 1) !important
+    color: #fff Im !important
+.vc-title
+  font-size 14px !important
+  position relative
+  top -4px
+.vc-arrow
+  border none !important
+  svg
+    width 20px
+    height 20px
+.fc-daygrid-day-events
+  a
+    border: none
+.fc-daygrid-day-top
+  justify-content: center
+  padding-top: 10px
+  a
+    text-align: center
+    color: #494949
+    font-weight: 700
+.fc-scrollgrid,.fc-scrollgrid-liquid
+  border-top: none
+.fc-col-header-cell-cushion 
+  color: #494949
+th[role='columnheader']
+  .fc-scrollgrid-sync-inner
+    height: 40px
+    line-height: 40px
+.fc
+  .fc-button,.fc-button-primary
+    background:#fff !important
+    color: #494949 !important
+    border: none !important
+  .fc-daygrid-day.fc-day-today
+    background: #F6FAFF !important
+.fc-daygrid-day
+  height: 120px
+.fc-h-event
+  background: rgba(0, 0, 0, 0) !important
+.fc-button-primary
+  border: none
+  &:active
+    border: none
+  &:hover
+    border: none
+  &:focus
+    border: none
+  &:link
+    border: none
+
+.green
+  color: #67C23A
+.red
+  color: #F56C6C

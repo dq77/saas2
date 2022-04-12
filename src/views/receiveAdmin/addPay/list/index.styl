@@ -1,0 +1,37 @@
+.list_warper
+  width: 100%
+  display: flex
+  justify-content: center
+  min-width: 1280px
+  padding-bottom: 80px
+  .list_box
+    display: flex
+    flex-wrap: wrap
+    width: 1280px
+    .list_item
+      width: 290px;
+      height: 120px;
+      background: #FAFBFF;
+      border-radius: 4px;
+      border: 1px solid #EAEBEE;
+      margin: 0 15px 30px 15px
+      min-height: 120px
+      cursor pointer
+      font-size 12px
+      color: #494949
+      box-sizing: border-box
+      padding: 20px
+      &:hover
+        box-shadow: 0px 3px 13px 3px rgba(140, 140, 140, 0.1);
+      .list_info
+        display: flex
+        align-items: center
+        margin-bottom: 4px
+        .list_info_label
+          margin-right 5px
+        .list_info_value
+          flex: 1
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          word-break: break-all;
